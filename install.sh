@@ -6,9 +6,11 @@ KEYMAP="de-latin1"
 loadkeys $KEYMAP
 
 # Systemclock
+echo "System Clock"
 timedatectl set-ntp true
 
 # Drive
+echo "Drive"
 (
 echo g
 echo n # Add a new partition
@@ -31,6 +33,7 @@ echo
 echo w # Write changes
 ) | fdisk /dev/sda
 
+echo "MKFS"
 mkfs.fat -F32 /dev/sda1
 
 mkswap /dev/sda2
@@ -38,11 +41,13 @@ swapon /dev/sda2
 
 mkfs.ext4 /dev/sda3
 
+echo "Mount sda3"
 mount /dev/sda3 /mnt
 pacstrap /mnt base linux linux-firmware
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+echo "Chroot"
 cp chroot_script.sh /mnt
 
 arch-chroot /mnt

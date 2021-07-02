@@ -43,4 +43,6 @@ pacstrap /mnt base linux linux-firmware
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+cp chroot_script.sh /mnt
+
 arch-chroot /mnt

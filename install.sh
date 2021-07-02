@@ -47,6 +47,6 @@ cp chroot_script.sh /mnt
 
 arch-chroot /mnt
 
-umount -l /mnt
+rm /mnt/chroot_script.sh
 
-shutdown now
+umount -l /mnt

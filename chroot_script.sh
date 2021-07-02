@@ -18,11 +18,9 @@ cat << EOF >> /etc/hosts
 EOF
 
 passwd
-a
 
 useradd -m tetra
 passwd tetra
-a
 
 usermod -aG wheel,audio,video,optical,storage tetra
 

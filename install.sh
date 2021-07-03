@@ -31,6 +31,7 @@ echo 3 # Partition number
 echo   # First sector (Accept default: 1)
 echo 
 echo w # Write changes
+sleep 5
 ) | fdisk /dev/sda
 
 echo "MKFS"

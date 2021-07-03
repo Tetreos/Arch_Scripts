@@ -2,6 +2,7 @@
 # Arch Install
 
 # Load the right Keymap
+echo "Select the right Keymap"
 KEYMAP="de-latin1"
 loadkeys $KEYMAP
 
@@ -10,7 +11,7 @@ echo "System Clock"
 timedatectl set-ntp true
 
 # Drive
-echo "Drive"
+echo "Partitioning drive"
 (
 echo g
 echo n # Add a new partition
@@ -35,10 +36,8 @@ echo w # Write changes
 
 echo "MKFS"
 mkfs.fat -F32 /dev/sda1
-
 mkswap /dev/sda2
 swapon /dev/sda2
-
 mkfs.ext4 /dev/sda3
 
 echo "Mount sda3"
@@ -48,10 +47,9 @@ pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo "Chroot"
+sleep 5
 cp chroot_script.sh /mnt
-
 arch-chroot /mnt
-
 rm /mnt/chroot_script.sh
 
 umount -l /mnt

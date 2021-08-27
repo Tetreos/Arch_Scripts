@@ -8,6 +8,3 @@ HOSTNAME="archlinux"
 
 # User
 USER="tetra"
-
-# Password root and user
-PW="root"

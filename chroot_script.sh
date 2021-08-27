@@ -1,5 +1,5 @@
 #!/bin/bash
-bash ./config.sh
+source ./config.sh
 
 # Installing some useful packages
 pacman nano

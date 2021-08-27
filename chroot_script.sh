@@ -37,6 +37,7 @@ EOF
 
 # Root password (user input)
 echo "Enter root password"
+# echo "$password" | passwd "$username" --stdin for automated password input
 passwd
 
 # Adding user

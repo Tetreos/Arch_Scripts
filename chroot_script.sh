@@ -48,10 +48,10 @@ passwd $USER
 usermod -aG wheel,audio,video,optical,storage $USER
 
 # Installing some packages
-pacman -S sudo nano
 
 # Configuring sudo
-EDITOR=nano visudo
+pacman -S sudo
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 
 # Downloading and installing GRUB
 echo "Installing GRUB"
@@ -63,5 +63,6 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Post-installation
-pacman -S networkmanager
+pacman -S networkmanager nano git
+
 systemctl enable NetworkManager

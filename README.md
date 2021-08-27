@@ -1,5 +1,5 @@
 # Arch_Scripts
-Install Script for Arch
+Install Script for Arch (UEFI)
 
 How to use:
 1. git clone https://github.com/Tetreos/arch-install.git

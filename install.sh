@@ -1,5 +1,5 @@
 #!/bin/bash
-bash ./config.sh
+source ./config.sh
 # Pre-installation --------------------------------------------------------------------------------------------------
 
 # Load the right Keymap

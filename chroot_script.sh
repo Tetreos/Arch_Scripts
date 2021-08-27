@@ -35,9 +35,13 @@ cat << EOF >> /etc/hosts
 127.0.1.1   $HOSTNAME.localdomain   $HOSTNAME
 EOF
 
+# echo "$password" | passwd "$username" --stdin for automated password input
+
+# PASS_HASH=$(echo "hunter2" | openssl passwd -6 -stdin)
+# chpasswd -e <<< "your_username:$PASS_HASH"
+
 # Root password (user input)
 echo "Enter root password"
-# echo "$password" | passwd "$username" --stdin for automated password input
 passwd
 
 # Adding user

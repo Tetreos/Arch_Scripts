@@ -1,5 +1,5 @@
 # Arch_Scripts
-Install Script for Arch (UEFI)
+Install Script for Arch (UEFI) WIP for amd hardware
 
 How to use:
 1. git clone https://github.com/Tetreos/arch-install.git
